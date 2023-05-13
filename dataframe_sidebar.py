@@ -10,26 +10,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-## MAC sFTP mount point
-# PATH_PREFIX = '/Users/pylerner/.CMVolumes/nii_local_sftp'
-
-# Debian sFTP root
-# PATH_PREFIX = '/home/pyler/netdisk'
-
-FILE_NAME = 'training.log'
-
-print(os.listdir())
-print(os.getcwd())
-print(os.path.abspath(FILE_NAME))
-
-PATH_PREFIX = os.getcwd()
-
-# DATA = str(os.path.abspath(FILE_NAME))
-DATA = 'training.log'
-
-
-# DATA = os.path.join(PATH_PREFIX, FILE_NAME)
-
 
 def get_history_data(DATA):
       
@@ -47,6 +27,7 @@ def get_period(a, b_list, c_list):
     idx = b_list.index(a)
     return c_list[idx]
     
+DATA = 'training.log'
         
 st.title('Домашнее задание уровня Lite "Вывод датафрейма в streamlite"')
 st.subheader('Выполнено Лернером В.')
@@ -134,4 +115,4 @@ if show_code:
     with open(PATH, 'r') as file:
         file = file.read()
         st.code(file, language='python')
-        
+
